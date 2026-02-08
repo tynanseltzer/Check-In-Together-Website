@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Check In Together - Emergency safety check-ins and alerts for people living alone">
+    <title>Check In Together - Emergency Safety Check-Ins</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="logo">🛡️</span>
+                <span class="brand-name">Check In Together</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#consent">Opt-In & Consent</a></li>
+                <li><a href="#sms-policy">SMS Policy</a></li>
+                <li><a href="#privacy">Privacy</a></li>
+                <li><a href="#terms">Terms</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Landing / Home Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Check In Together</h1>
+                    <p class="tagline">Emergency safety check-ins and alerts for people living alone</p>
+                    <p class="description">
+                        Check In Together is an emergency check-in service that notifies designated emergency
+                        contacts via SMS during urgent situations. Users complete regular safety check-ins,
+                        and missed check-ins trigger automatic alerts to their chosen emergency contacts.
+                    </p>
+
+                    <div class="info-box">
+                        <h3>📱 Who Sends Messages</h3>
+                        <p>Messages are sent by <strong>Tynan Seltzer</strong> operating Check In Together,
+                        a personal safety monitoring service based in the United States.</p>
+                    </div>
+
+                    <div class="info-box non-marketing">
+                        <h3>✉️ Non-Marketing Service</h3>
+                        <p><strong>No promotional messages are sent.</strong> Emergency contacts only receive:</p>
+                        <ul>
+                            <li>Initial opt-in consent requests (one-time)</li>
+                            <li>Emergency alerts when a user misses check-ins</li>
+                            <li>No advertisements, promotions, or marketing materials</li>
+                        </ul>
+                    </div>
+
+                    <div class="cta-buttons">
+                        <a href="#how-it-works" class="btn btn-primary">Learn More</a>
+                        <a href="#consent" class="btn btn-secondary">Opt-In Process</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="section">
+            <div class="container">
+                <h2>How It Works</h2>
+                <p class="section-intro">Check In Together requires explicit consent before sending any emergency alerts.</p>
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>User Adds Emergency Contact</h3>
+                        <p>A Check In Together user (the person living alone) adds an emergency contact's phone number in the app. The contact is typically a family member, friend, or neighbor.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Opt-In Request Sent</h3>
+                        <p>The emergency contact receives a one-time SMS asking them to opt in. This message clearly explains what they're consenting to and how to respond.</p>
+                        <div class="message-example">
+                            <strong>Example Opt-In SMS:</strong><br>
+                            <code>"[John Smith] listed you as an emergency contact for Check In Together. Reply YES to receive emergency alerts if they miss safety check-ins. Reply STOP to opt out. Msg&data rates may apply. Help: support@checkintogetherapp.com"</code>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Contact Must Reply YES</h3>
+                        <p>The emergency contact must explicitly reply with "YES" to opt in. No alerts will be sent until consent is confirmed. We store this consent record with timestamp, phone number, and consent text.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Emergency Alerts (Rare)</h3>
+                        <p>Only after consent, the contact may receive emergency alerts if the user misses consecutive check-ins.</p>
+                        <div class="message-example">
+                            <strong>Example Emergency Alert:</strong><br>
+                            <code>"🚨 Emergency alert from Check In Together: [John Smith] has missed 2 consecutive safety check-ins. Last check-in: Jan 15, 2026 9:00 AM. Please contact them immediately to ensure they are safe. Reply STOP to opt out."</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <h3>📊 Message Frequency</h3>
+                    <p><strong>Extremely Rare</strong> - Emergency contacts only receive messages during actual emergencies when a user misses consecutive check-ins. In normal operation, contacts may receive zero messages per month. This is not a frequent notification service.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Consent & Opt-In Section -->
+        <section id="consent" class="section alt-bg">
+            <div class="container">
+                <h2>Consent & Opt-In Process</h2>
+                <p class="verification-note"><strong>This is the official consent documentation page for Twilio toll-free verification.</strong></p>
+
+                <div class="consent-box">
+                    <h3>Explicit Opt-In Requirement</h3>
+                    <p>Check In Together requires <strong>explicit, prior express consent</strong> from all emergency contacts before sending any SMS messages. Here's how we obtain and verify consent:</p>
+
+                    <h4>1. Consent Method</h4>
+                    <ul>
+                        <li><strong>SMS Reply</strong>: Emergency contacts receive an initial SMS requesting consent and must reply "YES" to opt in</li>
+                        <li><strong>User-initiated</strong>: The primary user (person being monitored) initiates the consent request by adding the contact in our app</li>
+                        <li><strong>Clear language</strong>: The opt-in message explicitly states what they're consenting to receive</li>
+                    </ul>
+
+                    <h4>2. Exact Opt-In Wording</h4>
+                    <div class="consent-message">
+                        <p><strong>SMS sent to emergency contact:</strong></p>
+                        <code class="large">"[User Name] listed you as an emergency contact for Check In Together. Reply YES to receive emergency alerts if they miss safety check-ins. Reply STOP to opt out. Msg&data rates may apply. Help: support@checkintogetherapp.com"</code>
+                    </div>
+
+                    <h4>3. What "YES" Means</h4>
+                    <p>By replying "YES," the emergency contact explicitly consents to:</p>
+                    <ul>
+                        <li>Receive rare emergency alert SMS messages when the user misses safety check-ins</li>
+                        <li>Be contacted via SMS during urgent situations requiring wellness checks</li>
+                        <li>Standard messaging and data rates from their carrier</li>
+                    </ul>
+                    <p><strong>They do NOT consent to:</strong></p>
+                    <ul>
+                        <li>Marketing messages (none are ever sent)</li>
+                        <li>Promotional content</li>
+                        <li>Frequent or regular messages</li>
+                        <li>Sharing their information with third parties</li>
+                    </ul>
+
+                    <h4>4. Consent Record Storage</h4>
+                    <p>When an emergency contact opts in, we store the following as proof of consent:</p>
+                    <ul>
+                        <li><strong>Phone number</strong> of the emergency contact</li>
+                        <li><strong>Timestamp</strong> of when they replied "YES"</li>
+                        <li><strong>Consent text</strong> - the exact opt-in message they received</li>
+                        <li><strong>Method</strong> - SMS reply confirmation</li>
+                        <li><strong>User association</strong> - which user added them as an emergency contact</li>
+                        <li><strong>IP address</strong> (if opt-in via web) - not applicable for SMS opt-in</li>
+                    </ul>
+                    <p>These records are retained for the duration of the emergency contact relationship and for 3 years after opt-out for compliance purposes.</p>
+
+                    <h4>5. Screenshot Documentation</h4>
+                    <p><em>Screenshot showing the opt-in flow from the emergency contact's perspective:</em></p>
+                    <div class="screenshot-placeholder">
+                        <p>📱 <strong>Opt-In SMS Screenshot</strong></p>
+                        <p class="note">Shows: Initial opt-in request SMS with YES reply option</p>
+                    </div>
+                    <div class="screenshot-placeholder">
+                        <p>📱 <strong>Confirmation Screenshot</strong></p>
+                        <p class="note">Shows: Confirmation message after replying YES</p>
+                    </div>
+                    <p class="screenshot-note">Note: Actual screenshots will be added during Twilio verification process</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SMS Policy Section -->
+        <section id="sms-policy" class="section">
+            <div class="container">
+                <h2>SMS Policy</h2>
+
+                <div class="policy-box">
+                    <h3>🛑 STOP - Opt-Out</h3>
+                    <p><strong>Reply STOP to opt out at any time.</strong></p>
+                    <p>Emergency contacts can opt out immediately by replying STOP to any message. When you opt out:</p>
+                    <ul>
+                        <li>You will no longer receive emergency alerts for that user</li>
+                        <li>Your opt-out is processed immediately (within seconds)</li>
+                        <li>You will receive one final confirmation message: <code>"You have been unsubscribed from Check In Together emergency alerts. No further messages will be sent."</code></li>
+                        <li>The primary user will be notified to add a different emergency contact</li>
+                    </ul>
+                    <p class="important">We honor all STOP requests immediately and automatically. No human intervention is required.</p>
+                </div>
+
+                <div class="policy-box">
+                    <h3>❓ HELP - Get Help</h3>
+                    <p><strong>Reply HELP for assistance.</strong></p>
+                    <p>If you reply HELP, you'll receive:</p>
+                    <code class="large">"Check In Together: Emergency alerts for safety check-ins. STOP to opt out. Questions? Email support@checkintogetherapp.com"</code>
+                </div>
+
+                <div class="policy-box">
+                    <h3>📧 Support Contact</h3>
+                    <p>For questions, concerns, or assistance:</p>
+                    <ul>
+                        <li><strong>Email:</strong> <a href="mailto:support@checkintogetherapp.com">support@checkintogetherapp.com</a></li>
+                        <li><strong>Response time:</strong> Within 24-48 hours</li>
+                        <li><strong>Available for:</strong> Opt-in questions, technical issues, privacy inquiries</li>
+                    </ul>
+                </div>
+
+                <div class="policy-box">
+                    <h3>💵 Message & Data Rates</h3>
+                    <p>Standard SMS messaging and data rates may apply based on your mobile carrier's plan. Check In Together does not charge for messages, but your carrier may charge for incoming SMS messages depending on your plan.</p>
+                </div>
+
+                <div class="policy-box">
+                    <h3>📱 Supported Carriers</h3>
+                    <p>Check In Together works with all major US carriers including AT&T, T-Mobile, Verizon, and most MVNOs. Messages are sent via Twilio's enterprise SMS infrastructure.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Privacy Policy Section -->
+        <section id="privacy" class="section alt-bg">
+            <div class="container">
+                <h2>Privacy Policy</h2>
+                <p class="last-updated">Last Updated: February 8, 2026</p>
+
+                <div class="privacy-section">
+                    <h3>1. Information We Collect</h3>
+                    <p>Check In Together collects the following information:</p>
+
+                    <h4>From Primary Users (People Being Monitored):</h4>
+                    <ul>
+                        <li>Name</li>
+                        <li>Phone number (optional)</li>
+                        <li>Email address (optional)</li>
+                        <li>Check-in preferences (frequency, time)</li>
+                        <li>Check-in history and timestamps</li>
+                    </ul>
+
+                    <h4>From Emergency Contacts:</h4>
+                    <ul>
+                        <li>Phone number</li>
+                        <li>Name (provided by primary user)</li>
+                        <li>Opt-in consent timestamp and method</li>
+                        <li>Message delivery status (sent, delivered, failed)</li>
+                    </ul>
+
+                    <h4>Automatically Collected:</h4>
+                    <ul>
+                        <li>Device type and operating system (for app functionality)</li>
+                        <li>App usage data (check-in completion, settings changes)</li>
+                        <li>SMS delivery receipts and status</li>
+                    </ul>
+                </div>
+
+                <div class="privacy-section">
+                    <h3>2. How We Use Your Information</h3>
+                    <ul>
+                        <li><strong>Safety monitoring:</strong> Track check-in completion and trigger emergency alerts</li>
+                        <li><strong>Emergency notifications:</strong> Send SMS alerts to opted-in emergency contacts</li>
+                        <li><strong>Consent management:</strong> Store and honor opt-in/opt-out preferences</li>
+                        <li><strong>Service improvement:</strong> Analyze usage patterns (anonymized) to improve reliability</li>
+                        <li><strong>Support:</strong> Respond to user inquiries and technical issues</li>
+                    </ul>
+                </div>
+
+                <div class="privacy-section">
+                    <h3>3. Who We Share Your Information With</h3>
+                    <p><strong>We do not sell, rent, or share your personal information with third parties for marketing purposes.</strong></p>
+
+                    <h4>Service Providers:</h4>
+                    <ul>
+                        <li><strong>Twilio</strong> - SMS delivery service (data processor only, does not retain messages)</li>
+                        <li><strong>SendGrid</strong> - Email delivery service (if email alerts are enabled)</li>
+                        <li>These providers are bound by data processing agreements and cannot use your data for their own purposes</li>
+                    </ul>
+
+                    <h4>Legal Requirements:</h4>
+                    <p>We may disclose information if required by law, court order, or to protect the safety of users in genuine emergency situations.</p>
+
+                    <h4>With Consent:</h4>
+                    <p>Emergency alerts are only sent to contacts you explicitly designate and who have opted in.</p>
+                </div>
+
+                <div class="privacy-section">
+                    <h3>4. Data Retention</h3>
+                    <ul>
+                        <li><strong>Active users:</strong> Data retained while account is active</li>
+                        <li><strong>Check-in history:</strong> Retained for 12 months for safety analysis</li>
+                        <li><strong>Consent records:</strong> Retained for 3 years after opt-out for compliance</li>
+                        <li><strong>After account deletion:</strong> All personal data deleted within 30 days (except consent records required for legal compliance)</li>
+                    </ul>
+                </div>
+
+                <div class="privacy-section">
+                    <h3>5. Your Rights</h3>
+                    <p>You have the right to:</p>
+                    <ul>
+                        <li><strong>Access:</strong> Request a copy of your personal data</li>
+                        <li><strong>Correct:</strong> Update inaccurate information in the app settings</li>
+                        <li><strong>Delete:</strong> Request account deletion and data removal</li>
+                        <li><strong>Opt-out:</strong> Unsubscribe from SMS alerts at any time (reply STOP)</li>
+                        <li><strong>Data portability:</strong> Request your data in a machine-readable format</li>
+                    </ul>
+                    <p>To exercise these rights, email: <a href="mailto:support@checkintogetherapp.com">support@checkintogetherapp.com</a></p>
+                </div>
+
+                <div class="privacy-section">
+                    <h3>6. Data Security</h3>
+                    <p>We implement industry-standard security measures:</p>
+                    <ul>
+                        <li>Encrypted data transmission (HTTPS/TLS)</li>
+                        <li>Secure cloud storage with encryption at rest</li>
+                        <li>Limited employee access to personal data</li>
+                        <li>Regular security audits and updates</li>
+                    </ul>
+                </div>
+
+                <div class="privacy-section">
+                    <h3>7. International Users</h3>
+                    <p>Check In Together operates from the United States. If you use our service from outside the US, your data will be transferred to and processed in the United States. By using our service, you consent to this transfer.</p>
+                </div>
+
+                <div class="privacy-section">
+                    <h3>8. Changes to This Policy</h3>
+                    <p>We may update this Privacy Policy. Changes will be posted on this page with an updated "Last Updated" date. Continued use of the service after changes constitutes acceptance.</p>
+                </div>
+
+                <div class="privacy-section">
+                    <h3>9. Contact Us</h3>
+                    <p>For privacy questions or concerns:</p>
+                    <p>
+                        <strong>Email:</strong> <a href="mailto:support@checkintogetherapp.com">support@checkintogetherapp.com</a><br>
+                        <strong>Service Operator:</strong> Tynan Seltzer<br>
+                        <strong>Location:</strong> United States
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Terms of Service Section -->
+        <section id="terms" class="section">
+            <div class="container">
+                <h2>Terms of Service</h2>
+                <p class="last-updated">Last Updated: February 8, 2026</p>
+
+                <div class="terms-section">
+                    <h3>1. Acceptance of Terms</h3>
+                    <p>By using Check In Together, you agree to these Terms of Service. If you don't agree, please don't use the service.</p>
+                </div>
+
+                <div class="terms-section">
+                    <h3>2. Service Description</h3>
+                    <p>Check In Together is a personal safety monitoring service that:</p>
+                    <ul>
+                        <li>Reminds users to complete regular safety check-ins</li>
+                        <li>Tracks missed check-ins</li>
+                        <li>Sends emergency alerts to designated contacts when check-ins are missed</li>
+                    </ul>
+                </div>
+
+                <div class="terms-section emergency-disclaimer">
+                    <h3>3. Emergency Disclaimer</h3>
+                    <div class="warning-box">
+                        <h4>⚠️ THIS IS NOT AN EMERGENCY RESPONSE SYSTEM</h4>
+                        <ul>
+                            <li><strong>Not a substitute for 911:</strong> Check In Together is NOT a replacement for emergency services. In any actual emergency, always call 911 (US) or your local emergency number immediately.</li>
+                            <li><strong>No guaranteed delivery:</strong> While we use reliable SMS infrastructure (Twilio), message delivery is not guaranteed. Network issues, phone settings, or carrier problems may delay or prevent message delivery.</li>
+                            <li><strong>Relies on user action:</strong> The system depends on users completing check-ins. Inability to access the app (lost phone, dead battery, etc.) will trigger alerts even if no emergency exists.</li>
+                            <li><strong>Contact responsibility:</strong> Emergency contacts may not see messages immediately or may not be able to respond. Do not rely solely on this system for safety.</li>
+                            <li><strong>Not medical monitoring:</strong> This is not a medical alert system and is not monitored by healthcare professionals.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="terms-section">
+                    <h3>4. User Responsibilities</h3>
+                    <p>As a Check In Together user, you agree to:</p>
+                    <ul>
+                        <li><strong>Accurate information:</strong> Provide correct phone numbers for yourself and emergency contacts</li>
+                        <li><strong>Keep contacts informed:</strong> Tell your emergency contacts they may receive alerts and ensure they understand what they mean</li>
+                        <li><strong>Obtain consent:</strong> Only add emergency contacts who have agreed to be contacted</li>
+                        <li><strong>Update information:</strong> Keep your contact list current and remove outdated contacts</li>
+                        <li><strong>Complete check-ins:</strong> Use the service responsibly and complete check-ins to avoid false alarms</li>
+                        <li><strong>Account security:</strong> Keep your login credentials secure</li>
+                    </ul>
+                </div>
+
+                <div class="terms-section">
+                    <h3>5. Emergency Contact Responsibilities</h3>
+                    <p>If you're listed as an emergency contact, you:</p>
+                    <ul>
+                        <li>Must opt in by replying YES to receive alerts</li>
+                        <li>Can opt out at any time by replying STOP</li>
+                        <li>Understand that alerts may be false alarms</li>
+                        <li>Are not obligated to respond or take action</li>
+                        <li>Should use your own judgment about how to respond</li>
+                    </ul>
+                </div>
+
+                <div class="terms-section">
+                    <h3>6. Prohibited Uses</h3>
+                    <p>You may NOT use Check In Together to:</p>
+                    <ul>
+                        <li>Harass, stalk, or abuse anyone</li>
+                        <li>Send messages to people without their consent</li>
+                        <li>Impersonate others</li>
+                        <li>Violate any laws or regulations</li>
+                        <li>Interfere with the service's operation</li>
+                        <li>Use automated systems to create accounts or send messages</li>
+                    </ul>
+                </div>
+
+                <div class="terms-section">
+                    <h3>7. Abuse Policy</h3>
+                    <p>We take abuse seriously. We will investigate and may suspend or terminate accounts that:</p>
+                    <ul>
+                        <li>Send excessive alerts (obvious misuse pattern)</li>
+                        <li>Add contacts without consent</li>
+                        <li>Use the service for harassment</li>
+                        <li>Violate these Terms of Service</li>
+                    </ul>
+                    <p>Report abuse to: <a href="mailto:support@checkintogetherapp.com">support@checkintogetherapp.com</a></p>
+                </div>
+
+                <div class="terms-section">
+                    <h3>8. Service Availability</h3>
+                    <p>We strive for high availability but cannot guarantee uninterrupted service. The service may be unavailable due to:</p>
+                    <ul>
+                        <li>Maintenance and updates</li>
+                        <li>Technical issues</li>
+                        <li>Third-party service outages (Twilio, hosting providers)</li>
+                        <li>Force majeure events</li>
+                    </ul>
+                </div>
+
+                <div class="terms-section">
+                    <h3>9. Limitation of Liability</h3>
+                    <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW:</p>
+                    <ul>
+                        <li>Check In Together is provided "AS IS" without warranties of any kind</li>
+                        <li>We are not liable for missed check-ins, undelivered messages, or emergency response delays</li>
+                        <li>We are not responsible for actions (or inaction) of emergency contacts</li>
+                        <li>Our total liability is limited to the amount you paid for the service (if any) in the past 12 months</li>
+                    </ul>
+                </div>
+
+                <div class="terms-section">
+                    <h3>10. Termination</h3>
+                    <p>You can stop using Check In Together at any time by deleting your account in the app. We may suspend or terminate accounts that violate these Terms. Upon termination:</p>
+                    <ul>
+                        <li>Your access to the service ends immediately</li>
+                        <li>Emergency contacts are notified that alerts will no longer be sent</li>
+                        <li>Your data will be deleted per our Privacy Policy (within 30 days)</li>
+                    </ul>
+                </div>
+
+                <div class="terms-section">
+                    <h3>11. Changes to Terms</h3>
+                    <p>We may update these Terms of Service. Significant changes will be communicated via email or in-app notification. Continued use after changes constitutes acceptance.</p>
+                </div>
+
+                <div class="terms-section">
+                    <h3>12. Governing Law</h3>
+                    <p>These Terms are governed by the laws of the United States and the state where the service operator is located. Any disputes will be resolved in the courts of that jurisdiction.</p>
+                </div>
+
+                <div class="terms-section">
+                    <h3>13. Contact for Legal Matters</h3>
+                    <p>For legal inquiries or Terms questions:</p>
+                    <p>
+                        <strong>Email:</strong> <a href="mailto:support@checkintogetherapp.com">support@checkintogetherapp.com</a><br>
+                        <strong>Service Operator:</strong> Tynan Seltzer<br>
+                        <strong>Location:</strong> United States
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section alt-bg">
+            <div class="container">
+                <h2>Contact Us</h2>
+
+                <div class="contact-grid">
+                    <div class="contact-box">
+                        <h3>📧 General Support</h3>
+                        <p>For questions, technical issues, or general inquiries:</p>
+                        <p class="contact-email">
+                            <a href="mailto:support@checkintogetherapp.com">support@checkintogetherapp.com</a>
+                        </p>
+                        <p class="response-time">Response time: 24-48 hours</p>
+                    </div>
+
+                    <div class="contact-box">
+                        <h3>🔒 Privacy & Data Requests</h3>
+                        <p>For privacy concerns, data access, or deletion requests:</p>
+                        <p class="contact-email">
+                            <a href="mailto:support@checkintogetherapp.com">support@checkintogetherapp.com</a>
+                        </p>
+                        <p class="note">Include "Privacy Request" in subject line</p>
+                    </div>
+
+                    <div class="contact-box">
+                        <h3>⚠️ Report Abuse</h3>
+                        <p>To report abuse, harassment, or Terms violations:</p>
+                        <p class="contact-email">
+                            <a href="mailto:support@checkintogetherapp.com">support@checkintogetherapp.com</a>
+                        </p>
+                        <p class="note">Include "Abuse Report" in subject line</p>
+                    </div>
+
+                    <div class="contact-box">
+                        <h3>📋 Service Information</h3>
+                        <p><strong>Operated by:</strong> Tynan Seltzer</p>
+                        <p><strong>Location:</strong> United States</p>
+                        <p><strong>Service Type:</strong> Personal safety monitoring (non-commercial)</p>
+                    </div>
+                </div>
+
+                <div class="faq-section">
+                    <h3>Quick Answers</h3>
+                    <div class="faq-item">
+                        <h4>How do I opt out of emergency alerts?</h4>
+                        <p>Reply <strong>STOP</strong> to any message. You'll be unsubscribed immediately.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Why did I receive an emergency alert?</h4>
+                        <p>Someone listed you as their emergency contact and missed their safety check-ins. Contact them to ensure they're okay.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>How often will I receive messages?</h4>
+                        <p>Rarely. You'll only receive messages during actual emergencies when a user misses check-ins. This could be zero messages per month in normal circumstances.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Do you sell my information?</h4>
+                        <p>No. We never sell, rent, or share your information for marketing purposes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Check In Together</h4>
+                    <p>Emergency safety monitoring service</p>
+                    <p class="footer-legal">Operated by Tynan Seltzer</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#consent">Opt-In & Consent</a></li>
+                        <li><a href="#sms-policy">SMS Policy</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p><a href="mailto:support@checkintogetherapp.com">support@checkintogetherapp.com</a></p>
+                    <p>United States</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Check In Together. All rights reserved.</p>
+                <p class="disclaimer-small">Not a medical device or emergency response system. Always call 911 in actual emergencies.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
