@@ -160,17 +160,43 @@
                     </ul>
                     <p>These records are retained for the duration of the emergency contact relationship and for 3 years after opt-out for compliance purposes.</p>
 
-                    <h4>5. Screenshot Documentation</h4>
-                    <p><em>Screenshot showing the opt-in flow from the emergency contact's perspective:</em></p>
-                    <div class="screenshot-placeholder">
-                        <p>📱 <strong>Opt-In SMS Screenshot</strong></p>
-                        <p class="note">Shows: Initial opt-in request SMS with YES reply option</p>
+                    <h4>5. Opt-In Flow Example</h4>
+                    <p><em>The following shows the opt-in SMS flow from the emergency contact's perspective:</em></p>
+
+                    <div class="phone-mockup">
+                        <div class="phone-header">
+                            <span class="phone-title">Messages</span>
+                            <span class="phone-number">+1 (833) XXX-XXXX</span>
+                        </div>
+                        <div class="sms-conversation">
+                            <div class="sms-bubble incoming">
+                                <p>John Smith listed you as an emergency contact for Check In Together. Reply YES to receive emergency alerts if they miss safety check-ins. Reply STOP to opt out. Msg&amp;data rates may apply. Help: support@checkintogetherapp.com</p>
+                                <span class="sms-time">10:32 AM</span>
+                            </div>
+                            <div class="sms-bubble outgoing">
+                                <p>YES</p>
+                                <span class="sms-time">10:35 AM</span>
+                            </div>
+                            <div class="sms-bubble incoming">
+                                <p>You're now registered as an emergency contact for John Smith on Check In Together. You'll receive alerts if they miss safety check-ins. Reply STOP to opt out anytime. Reply HELP for info.</p>
+                                <span class="sms-time">10:35 AM</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="screenshot-placeholder">
-                        <p>📱 <strong>Confirmation Screenshot</strong></p>
-                        <p class="note">Shows: Confirmation message after replying YES</p>
+
+                    <div class="phone-mockup" style="margin-top: 24px;">
+                        <div class="phone-header">
+                            <span class="phone-title">Messages</span>
+                            <span class="phone-number">+1 (833) XXX-XXXX</span>
+                        </div>
+                        <div class="sms-conversation">
+                            <div class="sms-bubble incoming alert-bubble">
+                                <p>&#x1F6A8; Emergency alert from Check In Together: John Smith has missed 2 consecutive safety check-ins. Last check-in: Jan 15, 2026 9:00 AM. Please contact them immediately to ensure they are safe. Reply STOP to opt out.</p>
+                                <span class="sms-time">3:15 PM</span>
+                            </div>
+                        </div>
+                        <p class="phone-caption">Example emergency alert (only sent when check-ins are missed)</p>
                     </div>
-                    <p class="screenshot-note">Note: Actual screenshots will be added during Twilio verification process</p>
                 </div>
             </div>
         </section>
