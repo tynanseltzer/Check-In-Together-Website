@@ -226,7 +226,7 @@
         <section id="privacy" class="section alt-bg">
             <div class="container">
                 <h2>Privacy Policy</h2>
-                <p class="last-updated">Last Updated: February 8, 2026</p>
+                <p class="last-updated">Last Updated: April 24, 2026</p>
 
                 <div class="privacy-section">
                     <h3>1. Information We Collect</h3>
@@ -255,12 +255,18 @@
                         <li>App usage data (check-in completion, settings changes)</li>
                         <li>SMS delivery receipts and status</li>
                     </ul>
+
+                    <h4>Device Permissions:</h4>
+                    <ul>
+                        <li><strong>Contacts:</strong> Used only when you tap "Import from Contacts" to select an emergency contact. We only store the name and phone number of contacts you explicitly choose. Your contact list is not uploaded or scanned.</li>
+                        <li><strong>Notifications:</strong> Used to remind you when a check-in is due.</li>
+                    </ul>
                 </div>
 
                 <div class="privacy-section">
                     <h3>2. How We Use Your Information</h3>
                     <ul>
-                        <li><strong>Safety monitoring:</strong> Track check-in completion and trigger emergency alerts</li>
+                        <li><strong>Check-in tracking:</strong> Track check-in completion and trigger alerts to your designated contacts when you miss check-ins</li>
                         <li><strong>Emergency notifications:</strong> Send SMS alerts to opted-in emergency contacts</li>
                         <li><strong>Consent management:</strong> Store and honor opt-in/opt-out preferences</li>
                         <li><strong>Service improvement:</strong> Analyze usage patterns (anonymized) to improve reliability</li>
@@ -274,6 +280,7 @@
 
                     <h4>Service Providers:</h4>
                     <ul>
+                        <li><strong>Supabase</strong> - Backend hosting: stores your account data, emergency contact opt-in status, and schedule for server-side reminder escalation. Provides authentication and serverless functions.</li>
                         <li><strong>Twilio</strong> - SMS delivery service (data processor only, does not retain messages)</li>
                         <li><strong>SendGrid</strong> - Email delivery service (if email alerts are enabled)</li>
                         <li>These providers are bound by data processing agreements and cannot use your data for their own purposes</li>
