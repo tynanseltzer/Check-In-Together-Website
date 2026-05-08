@@ -226,7 +226,7 @@
         <section id="privacy" class="section alt-bg">
             <div class="container">
                 <h2>Privacy Policy</h2>
-                <p class="last-updated">Last Updated: April 24, 2026</p>
+                <p class="last-updated">Last Updated: May 8, 2026</p>
 
                 <div class="privacy-section">
                     <h3>1. Information We Collect</h3>
@@ -261,6 +261,13 @@
                         <li><strong>Contacts:</strong> Used only when you tap "Import from Contacts" to select an emergency contact. We only store the name and phone number of contacts you explicitly choose. Your contact list is not uploaded or scanned.</li>
                         <li><strong>Notifications:</strong> Used to remind you when a check-in is due.</li>
                     </ul>
+
+                    <h4>For Users Who Choose Voice Check-Ins:</h4>
+                    <ul>
+                        <li>Voice check-ins are placed as a regular phone call to the number you provide. The call audio is processed by Twilio and OpenAI in real time so the AI companion can converse naturally.</li>
+                        <li>A text transcript of the call is stored on our servers so we can give you and your emergency contacts a summary. You can request deletion of your transcripts at any time by emailing support@checkintogetherapp.com.</li>
+                        <li>The voice companion is not a doctor and does not provide medical advice or diagnosis. Calls are intended as friendly check-ins, not assessments.</li>
+                    </ul>
                 </div>
 
                 <div class="privacy-section">
@@ -280,10 +287,12 @@
 
                     <h4>Service Providers:</h4>
                     <ul>
-                        <li><strong>Supabase</strong> - Backend hosting: stores your account data, emergency contact opt-in status, and schedule for server-side reminder escalation. Provides authentication and serverless functions.</li>
-                        <li><strong>Twilio</strong> - SMS delivery service (data processor only, does not retain messages)</li>
+                        <li><strong>Supabase</strong> - Backend hosting: stores your account data, emergency contact opt-in status, schedule for server-side reminder escalation, and (for users who opt into voice check-ins) call transcripts and summaries. Provides authentication and serverless functions.</li>
+                        <li><strong>Twilio</strong> - SMS and voice call delivery (data processor only). For voice check-ins, Twilio carries the audio of the call between you and our AI companion; Twilio does not record or retain call audio for us.</li>
+                        <li><strong>OpenAI</strong> - Real-time voice conversation engine for users who choose voice check-ins. Audio of the call is sent to OpenAI to drive the conversation. OpenAI does not train on this data per their API terms.</li>
+                        <li><strong>Anthropic (Claude)</strong> - After a voice check-in, the call transcript is sent to Anthropic to generate a short plain-language summary an emergency contact could read. Anthropic does not train on this data per their API terms.</li>
                         <li><strong>SendGrid</strong> - Email delivery service (if email alerts are enabled)</li>
-                        <li>These providers are bound by data processing agreements and cannot use your data for their own purposes</li>
+                        <li>These providers are bound by data processing agreements and cannot use your data for their own purposes.</li>
                     </ul>
 
                     <h4>Legal Requirements:</h4>
