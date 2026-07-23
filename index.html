@@ -226,7 +226,7 @@
         <section id="privacy" class="section alt-bg">
             <div class="container">
                 <h2>Privacy Policy</h2>
-                <p class="last-updated">Last Updated: June 11, 2026</p>
+                <p class="last-updated">Last Updated: July 23, 2026</p>
 
                 <div class="privacy-section">
                     <h3>1. Information We Collect</h3>
@@ -267,7 +267,8 @@
                         <li>Voice check-ins are placed as a regular phone call to the number you provide. The call audio is processed by Twilio and OpenAI in real time so the AI companion can converse naturally.</li>
                         <li>Text check-ins are a back-and-forth series of SMS messages: we text a few check-in questions and read the replies. The message content is processed to run the check-in.</li>
                         <li>A text transcript of the voice call or text conversation is stored on our servers so we can give you and your emergency contacts a short summary, and is processed by our AI provider (Anthropic) to generate it. Your responses can include wellbeing or health-related details. You can request deletion of your transcripts at any time by emailing support@checkintogetherapp.com.</li>
-                        <li>The check-in companion is not a doctor and does not provide medical advice or diagnosis. Check-ins are intended as friendly conversations, not assessments.</li>
+                        <li>We also keep a short, evolving written recap of how the person has been over time — their usual routine, things they've mentioned, and anything worth following up on — built from their check-in responses and updated after each check-in. We retain your check-in responses to maintain this recap, and it is included when our AI provider (Anthropic) summarizes your next check-in, so the recap reflects how you've been over time rather than a single day. It is kept while your account is active and can be deleted on request.</li>
+                        <li>The check-in companion is not a doctor and does not provide medical advice, diagnosis, or health monitoring. Check-ins are intended as friendly conversations, not assessments.</li>
                     </ul>
                 </div>
 
@@ -291,7 +292,7 @@
                         <li><strong>Supabase</strong> - Backend hosting: stores your account data, emergency contact opt-in status, schedule for server-side reminder escalation, and (for users who opt into voice check-ins) call transcripts and summaries. Provides authentication and serverless functions.</li>
                         <li><strong>Twilio</strong> - SMS and voice call delivery (data processor only). For voice check-ins, Twilio carries the audio of the call between you and our AI companion; Twilio does not record or retain call audio for us.</li>
                         <li><strong>OpenAI</strong> - Real-time voice conversation engine for users who choose voice check-ins. Audio of the call is sent to OpenAI to drive the conversation. OpenAI does not train on this data per their API terms.</li>
-                        <li><strong>Anthropic (Claude)</strong> - After a voice or text check-in, the transcript is sent to Anthropic to generate a short plain-language summary an emergency contact could read. Anthropic does not train on this data per their API terms.</li>
+                        <li><strong>Anthropic (Claude)</strong> - After each check-in, the transcript is sent to Anthropic to generate a short plain-language summary an emergency contact could read, and to maintain the running recap described above (which can include wellbeing/health-related details shared over prior check-ins). Anthropic does not train on this data per their API terms.</li>
                         <li><strong>SendGrid</strong> - Email delivery service (if email alerts are enabled)</li>
                         <li>These providers are bound by data processing agreements and cannot use your data for their own purposes.</li>
                     </ul>
