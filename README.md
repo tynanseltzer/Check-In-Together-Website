@@ -69,7 +69,7 @@ Upload these files to any web hosting:
 
 ### ✅ Homepage (#home)
 - Service description
-- Who sends messages (Tynan Seltzer)
+- Who sends messages (Check In Together LLC)
 - Non-marketing statement
 - Links to all policies
 
@@ -106,7 +106,7 @@ Upload these files to any web hosting:
 
 ### ✅ Contact (#contact)
 - Support email: support@checkintogetherapp.com
-- Operator: Tynan Seltzer
+- Operator: Check In Together LLC
 - Location: United States
 - FAQ section
 
@@ -145,7 +145,7 @@ When submitting your Twilio toll-free verification form:
 
 Edit `index.html` and search for:
 - `support@checkintogetherapp.com` - Update to your support email
-- `Tynan Seltzer` - Update to your entity name
+- `Check In Together LLC` - the operator's legal name (update if the entity changes)
 
 ### Update Colors
 
