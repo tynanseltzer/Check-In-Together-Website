@@ -129,14 +129,37 @@ When submitting your Twilio toll-free verification form:
 
 ### Sample Messages for Twilio Form:
 
-**Opt-In Request:**
+These are the texts production sends as of 2026-09-25 (read from the app's server code). Update
+them here and on the site whenever the code's wording changes; Twilio compares them.
+
+**Opt-In Request (emergency contact):**
 ```
-[John Smith] listed you as an emergency contact for Check In Together. Reply YES to receive emergency alerts if they miss safety check-ins. Reply STOP to opt out. Msg&data rates may apply. Help: support@checkintogetherapp.com
+[John Smith] listed you as an emergency contact for Check In Together. Reply YES to be told if they miss their scheduled check-ins. Reply STOP to decline. Msg&data rates may apply. Help: support@checkintogetherapp.com
+```
+
+**Confirmation after YES (emergency contact):**
+```
+You're confirmed to receive emergency alerts from Check In Together when your contact misses safety check-ins. Reply STOP anytime to opt out.
 ```
 
 **Emergency Alert:**
 ```
-🚨 Emergency alert from Check In Together: [John Smith] has missed 2 consecutive safety check-ins. Last check-in: Jan 15, 2026 9:00 AM. Please contact them immediately to ensure they are safe. Reply STOP to opt out.
+ALERT from Check In Together: [John Smith] has not checked in for about [3 hours]. Please check on them.
+```
+
+**Opt-In Request (person being checked in on):**
+```
+[Account Holder Name] set up Check In Together to check in on you with a brief regular text conversation. Reply YES to start, or STOP to decline. Tip: save this number as "Check In Together" so our check-ins always reach you. Msg&data rates may apply. Help: support@checkintogetherapp.com
+```
+
+**Confirmation after YES (person being checked in on):**
+```
+You're all set - Check In Together will reach out for your regular check-ins. Reply STOP anytime to opt out.
+```
+
+**HELP reply:**
+```
+Check In Together: Emergency alerts for safety check-ins. STOP to opt out. Questions? Email support@checkintogetherapp.com
 ```
 
 ## 🎨 Customization

@@ -79,26 +79,26 @@
                     <div class="step">
                         <div class="step-number">2</div>
                         <h3>Opt-In SMS Sent with Keyword</h3>
-                        <p>The emergency contact receives an SMS text message asking them to opt in by replying with the keyword <strong>"YES"</strong>. This message clearly explains that they are consenting to receive SMS text messages and describes what messages they will receive.</p>
+                        <p>The emergency contact receives an SMS text message asking them to opt in by replying with the keyword <strong>"YES"</strong>. The message says who listed them, what they will be told, and how to decline.</p>
                         <div class="message-example">
                             <strong>Opt-In SMS Text Message:</strong><br>
-                            <code>"[John Smith] listed you as an emergency contact for Check In Together. By replying YES, you agree to receive SMS text messages with emergency safety alerts if they miss check-ins. Msg frequency: rare (emergencies only). Msg&amp;data rates may apply. Reply STOP to opt out. HELP for help. support@checkintogetherapp.com"</code>
+                            <code>"[John Smith] listed you as an emergency contact for Check In Together. Reply YES to be told if they miss their scheduled check-ins. Reply STOP to decline. Msg&amp;data rates may apply. Help: support@checkintogetherapp.com"</code>
                         </div>
                     </div>
 
                     <div class="step">
                         <div class="step-number">3</div>
                         <h3>Contact Replies "YES" to Consent</h3>
-                        <p>The emergency contact must explicitly reply with the keyword <strong>"YES"</strong> to agree to receive SMS text messages. No text messages will be sent until this SMS consent is confirmed. We store the consent record including timestamp, phone number, keyword used, and the opt-in message text.</p>
+                        <p>The emergency contact must explicitly reply with the keyword <strong>"YES"</strong> to agree to receive SMS text messages. No text messages will be sent until this SMS consent is confirmed. We store the consent record: the phone number, the time they replied YES, and that they consented by text reply.</p>
                     </div>
 
                     <div class="step">
                         <div class="step-number">4</div>
                         <h3>Emergency Alert SMS (Rare)</h3>
-                        <p>Only after SMS consent is confirmed, the contact may receive emergency alert text messages if the user misses consecutive check-ins.</p>
+                        <p>Only after SMS consent is confirmed, the contact may receive an alert text message if the person misses a scheduled check-in and has not checked in within the waiting time chosen in the app.</p>
                         <div class="message-example">
                             <strong>Example Emergency Alert SMS:</strong><br>
-                            <code>"&#x1F6A8; Emergency alert from Check In Together: [John Smith] has missed 2 consecutive safety check-ins. Last check-in: Jan 15, 2026 9:00 AM. Please contact them immediately to ensure they are safe. Reply STOP to opt out."</code>
+                            <code>"ALERT from Check In Together: [John Smith] has not checked in for about [3 hours]. Please check on them."</code>
                         </div>
                     </div>
                 </div>
@@ -114,15 +114,19 @@
         <section id="consent" class="section alt-bg">
             <div class="container">
                 <h2>SMS Consent & Opt-In Process</h2>
-                <p class="verification-note"><strong>Opt-in type: VIA_TEXT — Emergency contacts opt in by replying with the keyword "YES" via SMS.</strong></p>
+                <p class="verification-note"><strong>Opt-in type: VIA_TEXT — Emergency contacts, and people who receive check-ins set up by someone else, opt in by replying with the keyword "YES" via SMS.</strong></p>
 
                 <!-- SMS Consent Statement - prominently displayed -->
                 <div class="sms-consent-statement">
                     <h3>SMS Text Message Consent</h3>
                     <p class="consent-declaration">By replying <strong>"YES"</strong> to our opt-in request, you agree to receive SMS text messages from Check In Together at the phone number provided. Messages include:</p>
                     <ul>
-                        <li>Emergency safety check-in alerts when a user misses consecutive check-ins</li>
-                        <li>One-time opt-in confirmation message</li>
+                        <li>One confirmation message after you reply YES</li>
+                        <li>An alert when the person who listed you misses a scheduled check-in and has not checked in within the waiting time chosen in the app</li>
+                        <li>An "all clear" message when they check in after an alert was sent</li>
+                        <li>A notice if their check-ins are paused because they have not responded for three days</li>
+                        <li>A message if they tap "Alert my contacts" in the app</li>
+                        <li>A short heads-up if their answers to an in-app check-in suggest it's worth reaching out (for example, they mentioned a fall)</li>
                     </ul>
                     <p class="consent-declaration"><strong>Message frequency:</strong> Rare — only during emergencies (typically 0-2 messages per month).</p>
                     <p class="consent-declaration"><strong>Message and data rates may apply.</strong> Your carrier may charge for incoming SMS messages.</p>
@@ -143,11 +147,11 @@
                         </div>
                         <div class="workflow-step">
                             <span class="workflow-number">Step 2</span>
-                            <p><strong>System sends opt-in SMS with keyword:</strong> The emergency contact immediately receives an SMS text message from our toll-free number asking them to opt in by replying with the keyword <strong>"YES"</strong>. This message clearly explains what text messages they will receive and how to opt out.</p>
+                            <p><strong>System sends opt-in SMS with keyword:</strong> Within a few minutes, the emergency contact receives an SMS text message from our toll-free number asking them to opt in by replying with the keyword <strong>"YES"</strong>. This message explains what they will be told and how to decline.</p>
                         </div>
                         <div class="workflow-step">
                             <span class="workflow-number">Step 3</span>
-                            <p><strong>Contact replies "YES" to consent:</strong> The emergency contact must reply with the keyword <strong>"YES"</strong> to explicitly consent to receiving SMS text messages. No text messages will be sent to the contact until they reply YES. If they do not reply, no further messages are sent.</p>
+                            <p><strong>Contact replies "YES" to consent:</strong> The emergency contact must reply with the keyword <strong>"YES"</strong> to explicitly consent to receiving SMS text messages. No other text messages will be sent to the contact until they reply YES. If they do not reply, we send the same request once more about three days later, and then nothing further.</p>
                         </div>
                         <div class="workflow-step">
                             <span class="workflow-number">Step 4</span>
@@ -161,17 +165,17 @@
                     <h4>3. Exact Opt-In SMS Wording</h4>
                     <div class="consent-message">
                         <p><strong>Opt-in request SMS sent to emergency contact:</strong></p>
-                        <code class="large">"[User Name] listed you as an emergency contact for Check In Together. By replying YES, you agree to receive SMS text messages with emergency safety alerts if they miss check-ins. Msg frequency: rare (emergencies only). Msg&amp;data rates may apply. Reply STOP to opt out. HELP for help. support@checkintogetherapp.com"</code>
+                        <code class="large">"[User Name] listed you as an emergency contact for Check In Together. Reply YES to be told if they miss their scheduled check-ins. Reply STOP to decline. Msg&amp;data rates may apply. Help: support@checkintogetherapp.com"</code>
                     </div>
                     <div class="consent-message" style="margin-top: 16px;">
                         <p><strong>Confirmation SMS sent after contact replies YES:</strong></p>
-                        <code class="large">"You've opted in to receive SMS text messages from Check In Together. You'll receive emergency alerts if [User Name] misses safety check-ins. Msg frequency: rare. Msg&amp;data rates may apply. Reply STOP to opt out anytime. HELP for help."</code>
+                        <code class="large">"You're confirmed to receive emergency alerts from Check In Together when your contact misses safety check-ins. Reply STOP anytime to opt out."</code>
                     </div>
 
                     <h4>4. What Replying "YES" Means — Explicit SMS Consent</h4>
                     <p>By replying "YES," the emergency contact <strong>explicitly agrees to receive SMS text messages</strong> from Check In Together. Specifically, they consent to:</p>
                     <ul>
-                        <li><strong>Receive SMS text messages</strong> containing emergency safety alerts when the user misses consecutive check-ins</li>
+                        <li><strong>Receive SMS text messages</strong> alerting them when the person who listed them misses a scheduled check-in, and the related messages listed above</li>
                         <li><strong>Receive a one-time confirmation SMS text message</strong> after opting in</li>
                         <li><strong>Standard message and data rates</strong> may apply from their mobile carrier</li>
                     </ul>
@@ -187,12 +191,11 @@
                     <ul>
                         <li><strong>Phone number</strong> of the emergency contact</li>
                         <li><strong>Timestamp</strong> of when they replied "YES"</li>
-                        <li><strong>Consent text</strong> — the exact opt-in SMS message they received</li>
-                        <li><strong>Opt-in method</strong> — VIA_TEXT (SMS keyword reply)</li>
-                        <li><strong>Keyword used</strong> — "YES"</li>
+                        <li><strong>Opt-in method</strong> — SMS reply (only a reply starting with "YES" or "Y" is recorded as consent)</li>
                         <li><strong>User association</strong> — which user added them as an emergency contact</li>
+                        <li><strong>Opt-out</strong> — the time they replied STOP, if they do</li>
                     </ul>
-                    <p>These records are retained for the duration of the emergency contact relationship and for 3 years after opt-out for compliance purposes.</p>
+                    <p>The opt-in request itself is recorded in our SMS provider's (Twilio's) message log. Consent records are kept with the contact's entry in the account and are deleted when the account holder removes that contact or deletes their account. Separately, our SMS provider blocks all further texts from our number to a number that has replied STOP.</p>
 
                     <h4>6. Opt-In Flow Example</h4>
                     <p><em>The following shows the complete SMS opt-in flow from the emergency contact's perspective:</em></p>
@@ -200,11 +203,11 @@
                     <div class="phone-mockup">
                         <div class="phone-header">
                             <span class="phone-title">Messages</span>
-                            <span class="phone-number">+1 (833) XXX-XXXX</span>
+                            <span class="phone-number">+1 (888) 691-7566</span>
                         </div>
                         <div class="sms-conversation">
                             <div class="sms-bubble incoming">
-                                <p>John Smith listed you as an emergency contact for Check In Together. By replying YES, you agree to receive SMS text messages with emergency safety alerts if they miss check-ins. Msg frequency: rare (emergencies only). Msg&amp;data rates may apply. Reply STOP to opt out. HELP for help. support@checkintogetherapp.com</p>
+                                <p>John Smith listed you as an emergency contact for Check In Together. Reply YES to be told if they miss their scheduled check-ins. Reply STOP to decline. Msg&amp;data rates may apply. Help: support@checkintogetherapp.com</p>
                                 <span class="sms-time">10:32 AM</span>
                             </div>
                             <div class="sms-bubble outgoing">
@@ -212,7 +215,7 @@
                                 <span class="sms-time">10:35 AM</span>
                             </div>
                             <div class="sms-bubble incoming">
-                                <p>You've opted in to receive SMS text messages from Check In Together. You'll receive emergency alerts if John Smith misses safety check-ins. Msg frequency: rare. Msg&amp;data rates may apply. Reply STOP to opt out anytime. HELP for help.</p>
+                                <p>You're confirmed to receive emergency alerts from Check In Together when your contact misses safety check-ins. Reply STOP anytime to opt out.</p>
                                 <span class="sms-time">10:35 AM</span>
                             </div>
                         </div>
@@ -221,16 +224,34 @@
                     <div class="phone-mockup" style="margin-top: 24px;">
                         <div class="phone-header">
                             <span class="phone-title">Messages</span>
-                            <span class="phone-number">+1 (833) XXX-XXXX</span>
+                            <span class="phone-number">+1 (888) 691-7566</span>
                         </div>
                         <div class="sms-conversation">
                             <div class="sms-bubble incoming alert-bubble">
-                                <p>&#x1F6A8; Emergency alert from Check In Together: John Smith has missed 2 consecutive safety check-ins. Last check-in: Jan 15, 2026 9:00 AM. Please contact them immediately to ensure they are safe. Reply STOP to opt out.</p>
+                                <p>ALERT from Check In Together: John Smith has not checked in for about 3 hours. Please check on them.</p>
                                 <span class="sms-time">3:15 PM</span>
                             </div>
                         </div>
                         <p class="phone-caption">Example emergency alert SMS (only sent when check-ins are missed)</p>
                     </div>
+
+                    <h4>7. Opt-In for People Who Receive Check-Ins</h4>
+                    <p>An account holder can set up check-ins for someone else, such as a parent. That person must also opt in by replying <strong>"YES"</strong> before we send them any check-in texts or place any check-in calls. Within a few minutes of being added, they receive the text below. If they do not reply, we send it once more about three days later, and then nothing further.</p>
+                    <div class="consent-message">
+                        <p><strong>Opt-in request SMS sent to the person being checked in on:</strong></p>
+                        <code class="large">"[Account Holder Name] set up Check In Together to check in on you with a brief regular text conversation. Reply YES to start, or STOP to decline. Tip: save this number as "Check In Together" so our check-ins always reach you. Msg&amp;data rates may apply. Help: support@checkintogetherapp.com"</code>
+                        <p>For check-ins by phone, "a brief regular text conversation" reads "a brief regular call".</p>
+                    </div>
+                    <div class="consent-message" style="margin-top: 16px;">
+                        <p><strong>Confirmation SMS sent after they reply YES:</strong></p>
+                        <code class="large">"You're all set - Check In Together will reach out for your regular check-ins. Reply STOP anytime to opt out."</code>
+                    </div>
+                    <p>After they reply YES, they receive their check-ins on the schedule set in the app (typically once a day): either a short phone call, or a short text conversation that begins:</p>
+                    <div class="consent-message">
+                        <code class="large">"Hi [Name], it's your Check In Together check-in. [First question] (Reply STOP to opt out.)"</code>
+                    </div>
+                    <p>If a check-in goes unanswered, we try again later that day. They are also sent a notice if their check-ins are paused because they have not responded for three days. Replying STOP ends all check-in texts and calls to them. Message and data rates may apply.</p>
+                    <p>People who set up check-ins for themselves choose calls or texts in the app and enter their own number; they are not sent a consent text.</p>
                 </div>
             </div>
         </section>
@@ -245,10 +266,9 @@
                     <p><strong>Reply STOP to opt out at any time.</strong></p>
                     <p>Emergency contacts can opt out immediately by replying STOP to any message. When you opt out:</p>
                     <ul>
-                        <li>You will no longer receive emergency alerts for that user</li>
+                        <li>You will no longer receive any texts from Check In Together at that number: no alerts about anyone who listed you, and no check-ins if you receive them</li>
                         <li>Your opt-out is processed immediately (within seconds)</li>
-                        <li>You will receive one final confirmation message: <code>"You have been unsubscribed from Check In Together emergency alerts. No further messages will be sent."</code></li>
-                        <li>The primary user will be notified to add a different emergency contact</li>
+                        <li>Our SMS provider (Twilio) sends one automatic confirmation that you have been unsubscribed; nothing is sent after that</li>
                     </ul>
                     <p class="important">We honor all STOP requests immediately and automatically. No human intervention is required.</p>
                 </div>
