@@ -49,7 +49,7 @@
                         <h3>✉️ Non-Marketing Service</h3>
                         <p><strong>No promotional messages are sent.</strong> Emergency contacts only receive:</p>
                         <ul>
-                            <li>Opt-in requests (sent at most twice)</li>
+                            <li>Opt-in requests (at most twice per request)</li>
                             <li>Alerts and the related notices listed under <a href="#consent">SMS Consent</a></li>
                             <li>No advertisements, promotions, or marketing materials</li>
                         </ul>
@@ -136,7 +136,7 @@
                         <li>A short heads-up if their answers to an in-app check-in suggest it's worth reaching out (for example, they mentioned a fall)</li>
                     </ul>
                     <p class="consent-declaration"><strong>Message frequency for emergency contacts:</strong> Rare — only when one of the events above happens: for example, one alert for each missed check-in and, if they then check in by call or text, one all-clear. With no missed check-ins, there may be none in a month.</p>
-                    <p class="consent-declaration"><strong>Message frequency for people who receive check-ins:</strong> Their scheduled check-ins (typically once a day). If a check-in goes unanswered, we try again: at most 6 texts or calls for each scheduled check-in (just one if the person has no emergency contact who can receive alerts). The account holder can also start a check-in at any time from the app.</p>
+                    <p class="consent-declaration"><strong>Message frequency for people who receive check-ins:</strong> Their scheduled check-ins (typically once a day). If a check-in goes unanswered, we try again, up to 6 texts or calls in all for each scheduled check-in (just one if the person has no emergency contact who can receive alerts). The account holder can also start a check-in at any time from the app.</p>
                     <p class="consent-declaration"><strong>Message and data rates may apply.</strong> Your carrier may charge for incoming SMS messages.</p>
                     <p class="consent-declaration">You can opt out at any time by replying <strong>STOP</strong>. Reply <strong>HELP</strong> for help. Contact: <a href="mailto:support@checkintogetherapp.com">support@checkintogetherapp.com</a></p>
                     <p class="consent-declaration">By opting in, you also agree to our <a href="#privacy">Privacy Policy</a> and <a href="#terms">Terms of Service</a>.</p>
@@ -159,7 +159,7 @@
                         </div>
                         <div class="workflow-step">
                             <span class="workflow-number">Step 3</span>
-                            <p><strong>Contact replies "YES" to consent:</strong> The emergency contact must reply with the keyword <strong>"YES"</strong> to explicitly consent to receiving SMS text messages. No other text messages will be sent to the contact until they reply YES. If they do not reply, we send the same request once more about three days later, and then nothing further. (Contacts added from app version 1.3 or earlier are sent the request once, when they are added, and it is not repeated.)</p>
+                            <p><strong>Contact replies "YES" to consent:</strong> The emergency contact must reply with the keyword <strong>"YES"</strong> to explicitly consent to receiving SMS text messages. No other text messages will be sent to the contact until they reply YES. If they do not reply, we send the same request once more about three days later, and then nothing further. (Contacts added from app version 1.3 or earlier were sent the request once, by the app, when they were added. From version 1.4 the account holder can ask us to send it again, and we send it at most twice.)</p>
                         </div>
                         <div class="workflow-step">
                             <span class="workflow-number">Step 4</span>
@@ -249,7 +249,7 @@
                     </div>
 
                     <h4>7. Opt-In for People Who Receive Check-Ins</h4>
-                    <p>An account holder can set up check-ins for someone else, such as a parent. That person must also opt in by replying <strong>"YES"</strong> before we send them any check-in texts or place any check-in calls. Within a few minutes of being added, they receive the text below. If they do not reply, we send it once more about three days later, and then nothing further. (People added from app version 1.3 or earlier are sent it once, when they are added, and it is not repeated.)</p>
+                    <p>An account holder can set up check-ins for someone else, such as a parent. That person must also opt in by replying <strong>"YES"</strong> before we send them any check-in texts or place any check-in calls. Within a few minutes of being added, they receive the text below. If they do not reply, we send it once more about three days later, and then nothing further. (People added from app version 1.3 or earlier were sent it once, by the app, when they were added. From version 1.4 the account holder can ask us to send it again, and we send it at most twice.)</p>
                     <div class="consent-message">
                         <p><strong>Opt-in request SMS sent to the person being checked in on:</strong></p>
                         <code class="large">"[Account Holder Name] set up Check In Together to check in on you with a brief regular text conversation. Reply YES to start, or STOP to decline. Tip: save this number as "Check In Together" so our check-ins always reach you. Msg&amp;data rates may apply. Help: support@checkintogetherapp.com"</code>
@@ -263,7 +263,7 @@
                     <div class="consent-message">
                         <code class="large">"Hi [Name], it's your Check In Together check-in. [First question] (Reply STOP to opt out.)"</code>
                     </div>
-                    <p>If a check-in goes unanswered, we try again: at most 6 texts or calls for each scheduled check-in (just one if the person has no emergency contact who can receive alerts). The account holder can also start a check-in at any time from the app. They are also sent a notice if their check-ins are paused because they have not responded for three days, and the account holder is texted too if their own phone number is saved in the app. During a text check-in, and shortly after one, any reply other than an opt-out such as STOP (including HELP) is taken as their answer; reply HELP at any other time for help. Replying STOP ends all check-in texts and calls to them. Message and data rates may apply.</p>
+                    <p>If a check-in goes unanswered, we try again, up to 6 texts or calls in all for each scheduled check-in (just one if the person has no emergency contact who can receive alerts). The account holder can also start a check-in at any time from the app. They are also sent a notice if their check-ins are paused because they have not responded for three days, and the account holder is texted too if their own phone number is saved in the app. Until that day's check-in text has been answered and the conversation finished (an unanswered check-in text stays open for up to 24 hours), any reply other than an opt-out such as STOP (including HELP) is taken as their answer; after that, reply HELP for help. Replying STOP ends all check-in texts and calls to them. Message and data rates may apply.</p>
                     <p>People who set up check-ins for themselves choose calls or texts in the app and enter their own number; they are not sent a consent text.</p>
                 </div>
             </div>
@@ -291,7 +291,7 @@
                     <p><strong>Reply HELP for assistance.</strong></p>
                     <p>When you reply HELP, you'll receive the reply below. It is the same for everyone, including people who receive check-ins:</p>
                     <code class="large">"Check In Together: Emergency alerts for safety check-ins. STOP to opt out. Questions? Email support@checkintogetherapp.com"</code>
-                    <p>During a text check-in, and shortly after one, a reply of HELP is taken as your check-in answer instead, so reply HELP at any other time for help, or email <a href="mailto:support@checkintogetherapp.com">support@checkintogetherapp.com</a>.</p>
+                    <p>Until you have answered that day's check-in text and finished the conversation (an unanswered check-in text stays open for up to 24 hours), a reply of HELP is taken as your check-in answer; after that, reply HELP for help, or email <a href="mailto:support@checkintogetherapp.com">support@checkintogetherapp.com</a>.</p>
                 </div>
 
                 <div class="policy-box">
@@ -345,7 +345,7 @@
                         <li>Opt-in consent timestamp and method, and the time of any opt-out</li>
                         <li>Whether our texts to them were accepted for delivery, and any error code</li>
                     </ul>
-                    <p>Consent texts to emergency contacts and to people being checked in on are sent by our servers, at most twice per request, and only for people the account holder added and asked us to contact. People added from app version 1.3 or earlier are sent the request once, by the app, when they are added (emergency contacts get the version 1.3 wording shown under SMS Consent). If a contact added in an earlier app version was saved only on the phone, updating the app saves them with us and sends that one consent text.</p>
+                    <p>Consent texts to emergency contacts and to people being checked in on are sent by our servers, at most twice per request, and only for people the account holder added and asked us to contact. People added from app version 1.3 or earlier were sent the request once, by the app, when they were added; from version 1.4 the account holder can ask us to send it again (at most twice) (emergency contacts get the version 1.3 wording shown under SMS Consent). If a contact added in an earlier app version was saved only on the phone, updating the app saves them with us and sends the consent request (at most twice).</p>
 
                     <h4>Automatically Collected:</h4>
                     <ul>
@@ -378,9 +378,9 @@
                     <ul>
                         <li><strong>Opt-in method:</strong> They receive an SMS with an opt-in request and must reply with the keyword "YES" to consent to receiving SMS text messages</li>
                         <li><strong>Messages sent:</strong> To emergency contacts, the messages listed under SMS Consent above (alerts when a check-in is missed, and a one-time opt-in confirmation among them); to people receiving check-ins, their check-in texts or calls and a notice if their check-ins are paused after three days without a response; the account holder is also texted at their own phone number, if one is saved in the app, when check-ins pause</li>
-                        <li><strong>Message frequency:</strong> For emergency contacts, rare — only when a check-in is missed or another listed event happens, so there may be none in a month; for people receiving check-ins, their scheduled check-ins (typically once a day), with at most 6 texts or calls for each scheduled check-in if it goes unanswered (just one if the person has no emergency contact who can receive alerts), plus any check-in the account holder starts from the app</li>
+                        <li><strong>Message frequency:</strong> For emergency contacts, rare — only when a check-in is missed or another listed event happens, so there may be none in a month; for people receiving check-ins, their scheduled check-ins (typically once a day), with up to 6 texts or calls in all for each scheduled check-in if it goes unanswered (just one if the person has no emergency contact who can receive alerts), plus any check-in the account holder starts from the app</li>
                         <li><strong>Opt-out:</strong> Reply STOP at any time to stop receiving SMS text messages</li>
-                        <li><strong>Help:</strong> Reply HELP for assistance or email <a href="mailto:support@checkintogetherapp.com">support@checkintogetherapp.com</a> (during a text check-in, and shortly after one, a reply of HELP is taken as the check-in answer; reply HELP at any other time)</li>
+                        <li><strong>Help:</strong> Reply HELP for assistance or email <a href="mailto:support@checkintogetherapp.com">support@checkintogetherapp.com</a> (while a check-in text is open, for up to 24 hours until it is answered, a reply of HELP is taken as the check-in answer)</li>
                         <li><strong>Message and data rates may apply</strong></li>
                     </ul>
                     <p><strong>We do not sell, rent, or share your phone number with third parties for marketing or promotional purposes. Your phone number is used only for the messages and calls described on this page, and is shared only with the service providers that deliver them (see section 4).</strong></p>
@@ -454,7 +454,7 @@
                     <ul>
                         <li>Encrypted data transmission (HTTPS/TLS)</li>
                         <li>Secure cloud storage with encryption at rest</li>
-                        <li>Access to personal data is limited to the people who run the service</li>
+                        <li>Access to our database is limited to Check In Together LLC</li>
                     </ul>
                 </div>
 
