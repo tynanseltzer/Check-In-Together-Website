@@ -42,7 +42,7 @@
                     <div class="info-box">
                         <h3>📱 Who Sends Messages</h3>
                         <p>Messages are sent by <strong>Check In Together LLC</strong>, which operates Check In Together,
-                        a personal safety monitoring service based in the United States.</p>
+                        a check-in service based in the United States.</p>
                     </div>
 
                     <div class="info-box non-marketing">
@@ -105,7 +105,7 @@
 
                 <div class="info-box">
                     <h3>📊 Message Frequency</h3>
-                    <p><strong>Extremely Rare</strong> - Emergency contacts only receive messages during actual emergencies when a user misses consecutive check-ins. In normal operation, contacts may receive zero messages per month. This is not a frequent notification service.</p>
+                    <p><strong>Extremely Rare</strong> - Emergency contacts only receive messages when a person misses a check-in, or in the other cases listed under SMS Consent below. In normal operation, contacts may receive zero messages per month. This is not a frequent notification service.</p>
                 </div>
             </div>
         </section>
@@ -128,7 +128,7 @@
                         <li>A message if they tap "Alert my contacts" in the app</li>
                         <li>A short heads-up if their answers to an in-app check-in suggest it's worth reaching out (for example, they mentioned a fall)</li>
                     </ul>
-                    <p class="consent-declaration"><strong>Message frequency:</strong> Rare — only during emergencies (typically 0-2 messages per month).</p>
+                    <p class="consent-declaration"><strong>Message frequency:</strong> Rare — only when one of the events above happens (typically 0-2 messages per month).</p>
                     <p class="consent-declaration"><strong>Message and data rates may apply.</strong> Your carrier may charge for incoming SMS messages.</p>
                     <p class="consent-declaration">You can opt out at any time by replying <strong>STOP</strong>. Reply <strong>HELP</strong> for help. Contact: <a href="mailto:support@checkintogetherapp.com">support@checkintogetherapp.com</a></p>
                     <p class="consent-declaration">By opting in, you also agree to our <a href="#privacy">Privacy Policy</a> and <a href="#terms">Terms of Service</a>.</p>
@@ -389,7 +389,6 @@
                         <li><strong>Twilio</strong> - SMS and voice call delivery (data processor only). For voice check-ins, Twilio carries the audio of the call between you and our AI companion; Twilio does not record or retain call audio for us.</li>
                         <li><strong>OpenAI</strong> - Real-time voice conversation engine for users who choose voice check-ins. Audio of the call is sent to OpenAI to drive the conversation. OpenAI does not train on this data per their API terms.</li>
                         <li><strong>Anthropic (Claude)</strong> - After each check-in, the transcript is sent to Anthropic to generate a short plain-language summary an emergency contact could read, and to maintain the running recap described above (which can include wellbeing/health-related details shared over prior check-ins). Anthropic does not train on this data per their API terms.</li>
-                        <li><strong>SendGrid</strong> - Email delivery service (if email alerts are enabled)</li>
                         <li>These providers are bound by data processing agreements and cannot use your data for their own purposes.</li>
                     </ul>
 
@@ -460,7 +459,7 @@
         <section id="terms" class="section">
             <div class="container">
                 <h2>Terms of Service</h2>
-                <p class="last-updated">Last Updated: February 16, 2026</p>
+                <p class="last-updated">Last Updated: September 25, 2026</p>
 
                 <div class="terms-section">
                     <h3>1. Acceptance of Terms</h3>
@@ -469,7 +468,7 @@
 
                 <div class="terms-section">
                     <h3>2. Service Description</h3>
-                    <p>Check In Together is a personal safety monitoring service that:</p>
+                    <p>Check In Together is a check-in service that:</p>
                     <ul>
                         <li>Reminds users to complete regular safety check-ins</li>
                         <li>Tracks missed check-ins</li>
@@ -567,10 +566,11 @@
                     <h3>10. Termination</h3>
                     <p>You can stop using Check In Together at any time by deleting your account in the app. We may suspend or terminate accounts that violate these Terms. Upon termination:</p>
                     <ul>
-                        <li>Your access to the service ends immediately</li>
-                        <li>Emergency contacts are notified that alerts will no longer be sent</li>
-                        <li>Your data will be deleted per our Privacy Policy (within 30 days)</li>
+                        <li>Your access to the service ends immediately, and all check-in texts, calls and alerts stop</li>
+                        <li>Your emergency contacts are not sent any message about it, so please tell them yourself that they will no longer be alerted</li>
+                        <li>Your data is deleted as described in our Privacy Policy (immediately when you delete your account in the app)</li>
                     </ul>
+                    <p>Uninstalling the app does not delete your account: check-in calls and texts continue, and your contacts can still be alerted when check-ins are missed, until you delete your account in the app (Settings &rarr; Delete Account) or ask us to.</p>
                 </div>
 
                 <div class="terms-section">
@@ -632,7 +632,7 @@
                         <h3>📋 Service Information</h3>
                         <p><strong>Operated by:</strong> Check In Together LLC</p>
                         <p><strong>Location:</strong> United States</p>
-                        <p><strong>Service Type:</strong> Personal safety monitoring (non-commercial)</p>
+                        <p><strong>Service Type:</strong> Check-ins with text alerts to emergency contacts (non-commercial)</p>
                     </div>
                 </div>
 
@@ -648,7 +648,7 @@
                     </div>
                     <div class="faq-item">
                         <h4>How often will I receive messages?</h4>
-                        <p>Rarely. You'll only receive messages during actual emergencies when a user misses check-ins. This could be zero messages per month in normal circumstances.</p>
+                        <p>Rarely. You'll only receive messages when the person who listed you misses a check-in, or in the other cases listed under SMS Consent above. This could be zero messages per month in normal circumstances.</p>
                     </div>
                     <div class="faq-item">
                         <h4>Do you sell my information?</h4>
@@ -664,7 +664,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>Check In Together</h4>
-                    <p>Emergency safety monitoring service</p>
+                    <p>Check-ins with alerts to emergency contacts</p>
                     <p class="footer-legal">Operated by Check In Together LLC</p>
                 </div>
                 <div class="footer-section">
