@@ -306,49 +306,53 @@
         <section id="privacy" class="section alt-bg">
             <div class="container">
                 <h2>Privacy Policy</h2>
-                <p class="last-updated">Last Updated: September 22, 2026</p>
+                <p class="last-updated">Last Updated: September 25, 2026</p>
 
                 <div class="privacy-section">
                     <h3>1. Information We Collect</h3>
                     <p>Check In Together collects the following information:</p>
 
-                    <h4>From Primary Users (People Being Monitored):</h4>
+                    <h4>Accounts:</h4>
+                    <p>There is no username, password or email sign-up. The app signs in with an anonymous account created on your phone, and everything below is linked to that account.</p>
+
+                    <h4>From Primary Users (People Being Checked In On):</h4>
                     <p>One account can be set up for the account holder, or by a caregiver for one or more people they look after. For each person checked in on we collect:</p>
                     <ul>
                         <li>Name</li>
                         <li>Phone number (optional)</li>
-                        <li>Email address (optional)</li>
-                        <li>Check-in preferences (frequency, time)</li>
-                        <li>Check-in history and timestamps</li>
+                        <li>Check-in preferences (method, time, and how long to wait before alerting contacts)</li>
+                        <li>When check-ins were completed or missed (the answers and history of in-app check-ins stay on your phone)</li>
                     </ul>
 
                     <h4>From Emergency Contacts:</h4>
                     <ul>
                         <li>Phone number</li>
-                        <li>Name (provided by primary user)</li>
-                        <li>Opt-in consent timestamp and method</li>
-                        <li>Message delivery status (sent, delivered, failed)</li>
+                        <li>Name and relationship (provided by primary user)</li>
+                        <li>Opt-in consent timestamp and method, and the time of any opt-out</li>
+                        <li>Whether our texts to them were accepted for delivery, and any error code</li>
                     </ul>
                     <p>Consent texts to emergency contacts and to people being checked in on are sent by our servers, at most twice per request, and only for people the account holder added and asked us to contact. If a contact added in an earlier app version was saved only on the phone, updating the app saves them with us and sends that one consent text.</p>
 
                     <h4>Automatically Collected:</h4>
                     <ul>
-                        <li>Device type and operating system (for app functionality)</li>
+                        <li>Your phone's time zone, so check-ins happen at your local time</li>
                         <li>App usage data (check-in completion, settings changes)</li>
-                        <li>SMS delivery receipts and status</li>
+                        <li>The status of our texts and calls (for example, whether a call was answered, went to voicemail, or failed)</li>
+                        <li>Standard request logs kept by our hosting providers, which can include IP addresses</li>
                     </ul>
 
                     <h4>Device Permissions:</h4>
                     <ul>
-                        <li><strong>Contacts:</strong> Used only when you tap "Import from Contacts" to select an emergency contact. We only store the name and phone number of contacts you explicitly choose. Your contact list is not uploaded or scanned.</li>
+                        <li><strong>Contacts:</strong> Used only when you tap "Import from Contacts" to select an emergency contact, or "Save our number to your contacts" to add Check In Together's number to your phone. We only store the name and phone number of contacts you explicitly choose. Your contact list is not uploaded or scanned.</li>
                         <li><strong>Notifications:</strong> Used to remind you when a check-in is due.</li>
                     </ul>
 
-                    <h4>For Users Who Choose Voice or Text Check-Ins:</h4>
+                    <h4>Check-In Calls, Texts and Answers:</h4>
                     <ul>
-                        <li>Voice check-ins are placed as a regular phone call to the number you provide. The call audio is processed by Twilio and OpenAI in real time so the AI companion can converse naturally.</li>
+                        <li>Voice check-ins are placed as a regular phone call to the number you provide. The call audio is carried by Twilio and relayed through our voice server (hosted by Fly.io) to OpenAI in real time, so the AI companion can converse naturally and the call can be transcribed.</li>
                         <li>Text check-ins are a back-and-forth series of SMS messages: we text a few check-in questions and read the replies. The message content is processed to run the check-in.</li>
-                        <li>A text transcript of the voice call or text conversation is stored on our servers so we can give you and your emergency contacts a short summary, and is processed by our AI provider (Anthropic) to generate it. Your responses can include wellbeing or health-related details. You can request deletion of your transcripts at any time by emailing support@checkintogetherapp.com.</li>
+                        <li>A text transcript of the voice call or text conversation is stored on our servers so the account holder can see a short summary in the app, and is processed by our AI provider (Anthropic) to generate it. Your responses can include wellbeing or health-related details. You can request deletion of your transcripts at any time by emailing support@checkintogetherapp.com.</li>
+                        <li>In-app check-ins: your answers are sent to our AI provider (Anthropic) to write a short summary shown in the app, to update the recap described below, and to decide whether your opted-in emergency contacts should get a short heads-up text describing what was noticed (for example, that you mentioned a fall).</li>
                         <li>We also keep a short, evolving written recap of how the person has been over time — their usual routine, things they've mentioned, and anything worth following up on — built from their check-in responses and updated after each check-in. We retain your check-in responses to maintain this recap, and it is included when our AI provider (Anthropic) summarizes your next check-in, so the recap reflects how you've been over time rather than a single day. It is kept while your account is active and can be deleted on request.</li>
                         <li>The check-in companion is not a doctor and does not provide medical advice, diagnosis, or health monitoring. Check-ins are intended as friendly conversations, not assessments.</li>
                     </ul>
@@ -356,16 +360,16 @@
 
                 <div class="privacy-section">
                     <h3>2. SMS Text Message Consent</h3>
-                    <p>Check In Together sends SMS text messages to emergency contacts. We obtain explicit consent via text message (VIA_TEXT) before sending any messages:</p>
+                    <p>Check In Together sends SMS text messages to emergency contacts, and check-in texts to people who choose text check-ins. We obtain explicit consent via text message (VIA_TEXT) before sending any messages to an emergency contact, or to a person someone else set up check-ins for:</p>
                     <ul>
-                        <li><strong>Opt-in method:</strong> Emergency contacts receive an SMS with an opt-in request and must reply with the keyword "YES" to consent to receiving SMS text messages</li>
-                        <li><strong>Messages sent:</strong> Emergency safety check-in alerts and one-time opt-in confirmation</li>
-                        <li><strong>Message frequency:</strong> Rare — only during emergencies (typically 0-2 per month)</li>
+                        <li><strong>Opt-in method:</strong> They receive an SMS with an opt-in request and must reply with the keyword "YES" to consent to receiving SMS text messages</li>
+                        <li><strong>Messages sent:</strong> To emergency contacts, the messages listed under SMS Consent above (alerts when a check-in is missed, and a one-time opt-in confirmation among them); to people receiving check-ins, their check-in texts or calls</li>
+                        <li><strong>Message frequency:</strong> For emergency contacts, rare — only when a check-in is missed or another listed event happens (typically 0-2 per month); for people receiving check-ins, on the schedule set in the app</li>
                         <li><strong>Opt-out:</strong> Reply STOP at any time to stop receiving SMS text messages</li>
                         <li><strong>Help:</strong> Reply HELP for assistance or email <a href="mailto:support@checkintogetherapp.com">support@checkintogetherapp.com</a></li>
                         <li><strong>Message and data rates may apply</strong></li>
                     </ul>
-                    <p><strong>We do not sell, rent, or share your phone number with any third parties. Your phone number is used solely for sending emergency safety alerts via SMS.</strong></p>
+                    <p><strong>We do not sell, rent, or share your phone number with third parties for marketing or promotional purposes. Your phone number is used only for the messages and calls described on this page, and is shared only with the service providers that deliver them (see section 4).</strong></p>
                 </div>
 
                 <div class="privacy-section">
@@ -374,7 +378,8 @@
                         <li><strong>Check-in tracking:</strong> Track check-in completion and trigger alerts to your designated contacts when you miss check-ins</li>
                         <li><strong>Emergency notifications:</strong> Send SMS alerts to opted-in emergency contacts</li>
                         <li><strong>Consent management:</strong> Store and honor opt-in/opt-out preferences</li>
-                        <li><strong>Service improvement:</strong> Analyze usage patterns (anonymized) to improve reliability</li>
+                        <li><strong>Check-in summaries:</strong> Summarize check-ins for the account holder, keep the running recap, and (for in-app check-ins) decide whether to send contacts a heads-up, using the AI providers in section 4</li>
+                        <li><strong>Reliability:</strong> Check whether check-ins, texts, calls and alerts went out as they should, to find and fix problems</li>
                         <li><strong>Support:</strong> Respond to user inquiries and technical issues</li>
                     </ul>
                 </div>
@@ -385,10 +390,11 @@
 
                     <h4>Service Providers:</h4>
                     <ul>
-                        <li><strong>Supabase</strong> - Backend hosting: stores your account data, emergency contact opt-in status, schedule for server-side reminder escalation, and (for users who opt into voice check-ins) call transcripts and summaries. Provides authentication and serverless functions.</li>
-                        <li><strong>Twilio</strong> - SMS and voice call delivery (data processor only). For voice check-ins, Twilio carries the audio of the call between you and our AI companion; Twilio does not record or retain call audio for us.</li>
-                        <li><strong>OpenAI</strong> - Real-time voice conversation engine for users who choose voice check-ins. Audio of the call is sent to OpenAI to drive the conversation. OpenAI does not train on this data per their API terms.</li>
-                        <li><strong>Anthropic (Claude)</strong> - After each check-in, the transcript is sent to Anthropic to generate a short plain-language summary an emergency contact could read, and to maintain the running recap described above (which can include wellbeing/health-related details shared over prior check-ins). Anthropic does not train on this data per their API terms.</li>
+                        <li><strong>Supabase</strong> - Backend hosting (United States): stores your account data, emergency contacts and their opt-in status, your check-in schedule for server-side reminders and alerts, voice and text check-in transcripts and summaries, and the running recap. Provides authentication (the anonymous accounts described above) and serverless functions.</li>
+                        <li><strong>Twilio</strong> - SMS and voice call delivery (data processor only). For voice check-ins, Twilio carries the audio of the call between you and our AI companion and detects whether a person or voicemail answered; Twilio does not record or retain call audio for us. Twilio keeps its own records of the texts and calls it delivers.</li>
+                        <li><strong>Fly.io</strong> - Hosts our voice server, which relays call audio between Twilio and OpenAI during voice check-ins and saves the transcript to Supabase. It does not store call audio.</li>
+                        <li><strong>OpenAI</strong> - Real-time voice conversation engine for users who choose voice check-ins. Audio of the call is sent to OpenAI to drive the conversation and to transcribe it. OpenAI does not train on this data per their API terms.</li>
+                        <li><strong>Anthropic (Claude)</strong> - After each check-in, the transcript (voice or text check-ins) or your answers (in-app check-ins) are sent to Anthropic to generate a short plain-language summary, to maintain the running recap described above (which can include wellbeing/health-related details shared over prior check-ins), and, for in-app check-ins, to decide whether to send your emergency contacts a heads-up. Anthropic does not train on this data per their API terms.</li>
                         <li>These providers are bound by data processing agreements and cannot use your data for their own purposes.</li>
                     </ul>
 
@@ -403,9 +409,10 @@
                     <h3>5. Data Retention</h3>
                     <ul>
                         <li><strong>Active users:</strong> Data retained while account is active</li>
-                        <li><strong>Check-in history:</strong> Retained for 12 months for safety analysis</li>
-                        <li><strong>Consent records:</strong> Retained for 3 years after opt-out for compliance</li>
-                        <li><strong>After account deletion:</strong> Deleting your account in the app (Settings &rarr; Delete Account) immediately and permanently removes your check-in schedule, check-in history and summaries, the running recap, your emergency contacts, and the account itself — and stops all check-in texts and calls and all alerts to your emergency contacts. Deletion requests made by email are completed within 30 days. Consent records required for legal compliance may be retained.</li>
+                        <li><strong>Check-in transcripts, summaries and the recap:</strong> Kept while the account is active, and deleted when the account is deleted or on request. In-app check-in history is stored on your phone.</li>
+                        <li><strong>Consent records:</strong> Kept with the contact's (or checked-in person's) entry in the account, and deleted when the account holder removes them or deletes the account. Our SMS provider separately keeps blocking texts to any number that replied STOP.</li>
+                        <li><strong>After account deletion:</strong> Deleting your account in the app (Settings &rarr; Delete Account) immediately and permanently removes your check-in schedule, check-in history and summaries, the running recap, your emergency contacts, and the account itself — and stops all check-in texts and calls and all alerts to your emergency contacts. Deletion requests made by email are completed within 30 days. Deletion does not reach records held outside our database: our providers' own records, such as Twilio's logs of texts and calls already sent, and short-lived server logs are kept under those providers' retention periods.</li>
+                        <li><strong>Uninstalling the app:</strong> Does not delete your account or its data, and does not stop check-in calls and texts or alerts to your emergency contacts. Delete your account in the app first (Settings &rarr; Delete Account), or email us.</li>
                     </ul>
                 </div>
 
