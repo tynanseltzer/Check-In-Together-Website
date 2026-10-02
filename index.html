@@ -456,7 +456,7 @@
         <section id="privacy" class="section alt-bg">
             <div class="container">
                 <h2>Privacy Policy</h2>
-                <p class="last-updated">Last Updated: September 25, 2026</p>
+                <p class="last-updated">Last Updated: October 2, 2026</p>
 
                 <div class="privacy-section">
                     <h3>1. Information We Collect</h3>
@@ -527,6 +527,7 @@
                     <ul>
                         <li><strong>Check-in tracking:</strong> Track check-in completion and trigger alerts to your designated contacts when you miss check-ins</li>
                         <li><strong>Emergency notifications:</strong> Send SMS alerts to opted-in emergency contacts</li>
+                        <li><strong>Concern alerts:</strong> Notify your emergency contacts if what the person says in a text or call check-in suggests they may need help (for example "I fell"). That alert does not quote what was said or say what the concern was. When a missed check-in is later answered, contacts are told either "all clear" (only if nothing in the replies raised a concern) or that the person has replied but we cannot confirm all is well. Our automated check-in number cannot send help: a reply that mentions an emergency is answered with a reminder to call the local emergency number.</li>
                         <li><strong>Consent management:</strong> Store and honor opt-in/opt-out preferences</li>
                         <li><strong>Check-in summaries:</strong> Summarize check-ins for the account holder, keep the running recap, and (for in-app check-ins) decide whether to send contacts a heads-up, using the AI providers in section 4</li>
                         <li><strong>Reliability:</strong> Check whether check-ins, texts, calls and alerts went out as they should, to find and fix problems</li>
@@ -544,8 +545,9 @@
                         <li><strong>Twilio</strong> - SMS and voice call delivery (data processor only). For voice check-ins, Twilio carries the audio of the call between you and our AI companion and detects whether a person or voicemail answered; Twilio does not record or retain call audio for us. Twilio keeps its own records of the texts and calls it delivers.</li>
                         <li><strong>Fly.io</strong> - Hosts our voice server, which relays call audio between Twilio and OpenAI during voice check-ins and saves the transcript to Supabase. It does not store call audio.</li>
                         <li><strong>OpenAI</strong> - Real-time voice conversation engine for users who choose voice check-ins. Audio of the call is sent to OpenAI to drive the conversation and to transcribe it. OpenAI does not train on this data per their API terms.</li>
-                        <li><strong>Anthropic (Claude)</strong> - After each check-in, the transcript (voice or text check-ins) or your answers (in-app check-ins) are sent to Anthropic to generate a short plain-language summary, to maintain the running recap described above (which can include wellbeing/health-related details shared over prior check-ins), and, for in-app check-ins, to decide whether to send your emergency contacts a heads-up. Anthropic does not train on this data per their API terms.</li>
+                        <li><strong>Anthropic (Claude)</strong> - After each check-in, the transcript (voice or text check-ins) or your answers (in-app check-ins) are sent to Anthropic to generate a short plain-language summary, to maintain the running recap described above (which can include wellbeing/health-related details shared over prior check-ins), and, for in-app check-ins, to decide whether to send your emergency contacts a heads-up. It also reads each reply as it arrives, together with the conversation so far and a short profile, to decide whether to text the emergency contacts; the person's first name is removed first, other names they or their profile mention may not be. So a reply can be sent to Anthropic several times (with each later reply of the same check-in). Anthropic does not train on this data per their API terms.</li>
                     </ul>
+                    <p>When an alert is sent, or a reply could not be read automatically in time, we may review that conversation to check the alert was right and to decide whether to follow up (for example by contacting the account holder). This review is done with AI tools from Anthropic, so the conversation is also sent to Anthropic for it.</p>
 
                     <h4>Account Holder and Emergency Contacts:</h4>
                     <ul>
