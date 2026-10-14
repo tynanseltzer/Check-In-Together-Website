@@ -108,8 +108,8 @@
                 <h2>Before you rely on it</h2>
                 <p>It's a daily check-in, not an emergency service. Please know these limits:</p>
                 <ul>
-                    <li>It doesn't detect falls or emergencies. On calls and texts, a reply counts as checking in, even one like "I fell" (a photo or voice note on its own doesn't), and so can a call picked up by voicemail.</li>
-                    <li>Contacts are texted when a check-in is missed and the wait has passed, or at once if they reply HELP during a text check-in. Nothing is sent when something happens between check-ins. With one check-in a day and the default 1-hour wait, about 25 hours can pass.</li>
+                    <li>It can't detect a fall by itself; it only knows what they tell us. Our AI reads each text reply as it arrives, and each call once it ends. If something they say suggests they may need help (for example "I fell"), or they reply HELP to a text check-in, we text the contacts who agreed. The AI can miss something that needed help, or alert when nothing is wrong. A photo or voice note on its own doesn't count as checking in. On calls, any answer counts as checking in, and so can a call picked up by voicemail.</li>
+                    <li>Contacts are texted when a check-in is missed and the wait has passed. They're also texted within about a minute of a reply, or of a call ending, if what they said suggests they may need help. That includes a text sent up to 12 hours after our last check-in text or call. Otherwise, nothing is sent when something happens between check-ins: with one check-in a day and the default 1-hour wait, about 25 hours can pass.</li>
                     <li>Each missed check-in sends at most one alert text to each contact who agreed. We never call your contacts or emergency services, and no one at Check In Together responds to alerts or sends help.</li>
                     <li>A text can be delayed or fail to arrive, and a delivered one may not be seen right away.</li>
                     <li>Unanswered calls and texts are retried at most 5 more times that day (6 attempts in all), and not at all if no contact who agreed has alerts on.</li>
@@ -137,19 +137,19 @@
                     </div>
                     <div class="faq-item">
                         <h4>When exactly are contacts texted?</h4>
-                        <p>With the default settings, if a check-in is still unanswered an hour after its time, we text your contacts who have agreed to get alerts and have alerts on. With one check-in a day and the default 1-hour wait, about 25 hours can pass; with the longest wait, about 44 hours on calls and texts and about 8 days in the app.</p>
+                        <p>With the default settings, if a check-in is still unanswered an hour after its time, we text your contacts who have agreed to get alerts and have alerts on. With one check-in a day and the default 1-hour wait, about 25 hours can pass; with the longest wait, about 44 hours on calls and texts and about 8 days in the app. On call and text check-ins, they're also texted within about a minute if something your parent says suggests they may need help, or if they reply HELP to a text check-in.</p>
                     </div>
                     <div class="faq-item">
                         <h4>What does the alert say?</h4>
-                        <p>"ALERT from Check In Together: {name} has not checked in for about {time}. Please check on them." It doesn't include their answers or a summary.</p>
+                        <p>If a check-in is missed: "ALERT from Check In Together: {name} has not checked in for about {time}. Please check on them." If something they said suggests they may need help: "ALERT from Check In Together: {name} said something to us that suggests they may need help. Please contact them now." For something less urgent, a gentler text asks you to check on them today, and there are a few short follow-ups. None of these texts includes their answers or a summary; you can read those in the app.</p>
                     </div>
                     <div class="faq-item">
-                        <h4>What if I text that number?</h4>
-                        <p>Texts to this number outside a check-in aren't read by a person and don't reach your family. In an emergency, call 911.</p>
+                        <h4>What if someone texts that number?</h4>
+                        <p>Texts sent more than 12 hours after our last check-in text or call aren't stored or read by anyone, and aren't passed on; a message that sounds like an emergency gets an automatic reply to call 911 (or the local emergency number). Within those 12 hours, our AI reads a text like a reply and may alert the contacts, and the account holder can see it in the app. In an emergency, call 911.</p>
                     </div>
                     <div class="faq-item">
                         <h4>What about privacy?</h4>
-                        <p>Only the contact you pick (name and number) is sent to us; your contact list is never uploaded. We don't sell your data, don't use advertising identifiers, and don't track you across other apps or websites. Every completed check-in is summarized by AI: OpenAI for voice calls, Anthropic for summaries.</p>
+                        <p>Only the contact you pick (name and number) is sent to us; your contact list is never uploaded. We don't sell your data, don't use advertising identifiers, and don't track you across other apps or websites. Every completed check-in is summarized by AI: OpenAI for voice calls, Anthropic for summaries. Anthropic also reads each text reply and call transcript, to decide whether to alert your contacts.</p>
                     </div>
                     <div class="faq-item">
                         <h4>How do I stop it?</h4>
@@ -232,7 +232,7 @@
                     <div class="step">
                         <div class="step-number">4</div>
                         <h3>Emergency Alert SMS (Rare)</h3>
-                        <p>Only after SMS consent is confirmed, the contact may receive an alert text message if the person misses a scheduled check-in and has not checked in within the waiting time chosen in the app.</p>
+                        <p>Only after SMS consent is confirmed, the contact may receive an alert text message if the person misses a scheduled check-in and has not checked in within the waiting time chosen in the app, or if what they say in a call or text check-in suggests they may need help.</p>
                         <div class="message-example">
                             <strong>Example Emergency Alert SMS:</strong><br>
                             <code>"ALERT from Check In Together: [John Smith] has not checked in for about [3 hours]. Please check on them."</code>
@@ -247,7 +247,7 @@
 
                 <div class="info-box">
                     <h3>⚠️ If You Need Help</h3>
-                    <p>On calls and texts, any reply currently counts as checking in, and what you say is not passed on to your contacts. If you need help, call 911 or your contacts directly.</p>
+                    <p>On call and text check-ins, if what they say suggests they may need help, or they reply HELP during a text check-in, we text the contacts who agreed. We can't send help, and the AI can miss things. If you need help, call 911 (or your local emergency number) or your contacts directly.</p>
                 </div>
             </div>
         </section>
@@ -265,12 +265,14 @@
                     <ul>
                         <li>One confirmation message after you reply YES</li>
                         <li>An alert when the person who listed you misses a scheduled check-in and has not checked in within the waiting time chosen in the app</li>
-                        <li>An "all clear" message when they check in after an alert was sent (for check-ins by call or text)</li>
+                        <li>An alert if what they say in a call or text check-in suggests they may need help, or they reply HELP during a text check-in (or a gentler "check on them today" text for something less urgent)</li>
+                        <li>A "please check on them soon" text if a reply couldn't be read automatically in time</li>
+                        <li>A follow-up when they reply after a missed-check-in alert: "all clear" only if every reply was read and none raised a concern; otherwise that they've replied but we can't confirm all is well; nothing further if a "may need help" alert already reached them</li>
                         <li>A notice if their check-ins are paused because they have not responded for three days</li>
                         <li>A message if they tap "Alert my contacts" in the app</li>
                         <li>A short heads-up if their answers to an in-app check-in suggest it's worth reaching out (for example, they mentioned a fall)</li>
                     </ul>
-                    <p class="consent-declaration"><strong>Message frequency for emergency contacts:</strong> Rare — only when one of the events above happens: for example, one alert for each missed check-in and, if they then check in by call or text, one all-clear. With no missed check-ins, there may be none in a month.</p>
+                    <p class="consent-declaration"><strong>Message frequency for emergency contacts:</strong> Rare — only when one of the events above happens: for example, one alert for each missed check-in and, if they then reply by call or text, one follow-up; and, if something they say suggests they may need help, up to 3 alerts for that check-in. With no missed check-ins, there may be none in a month.</p>
                     <p class="consent-declaration"><strong>Message frequency for people who receive check-ins:</strong> Their scheduled check-ins (typically once a day). If a check-in goes unanswered, we try again, up to 6 texts or calls in all for each scheduled check-in (just one if the person has no emergency contact who can receive alerts). The account holder can also start a check-in at any time from the app.</p>
                     <p class="consent-declaration"><strong>Message and data rates may apply.</strong> Your carrier may charge for incoming SMS messages.</p>
                     <p class="consent-declaration">You can opt out at any time by replying <strong>STOP</strong>. Reply <strong>HELP</strong> for help. Contact: <a href="mailto:support@checkintogetherapp.com">support@checkintogetherapp.com</a></p>
@@ -426,8 +428,8 @@
                 </div>
 
                 <div class="policy-box">
-                    <h3>💬 What if I text that number?</h3>
-                    <p>Texts to this number outside a check-in aren't read by a person and don't reach your family. In an emergency, call 911.</p>
+                    <h3>💬 What if someone texts that number?</h3>
+                    <p>Texts sent more than 12 hours after our last check-in text or call aren't stored or read by anyone, and aren't passed on; a message that sounds like an emergency gets an automatic reply to call 911 (or the local emergency number). Within those 12 hours, our AI reads a text like a reply and may alert the contacts, and the account holder can see it in the app. In an emergency, call 911.</p>
                 </div>
 
                 <div class="policy-box">
@@ -652,7 +654,7 @@
                             <li><strong>Not a substitute for 911:</strong> Check In Together is NOT a replacement for emergency services. In any actual emergency, always call 911 (US) or your local emergency number immediately.</li>
                             <li><strong>No guaranteed delivery:</strong> While we use reliable SMS infrastructure (Twilio), message delivery is not guaranteed. Network issues, phone settings, or carrier problems may delay or prevent message delivery.</li>
                             <li><strong>Relies on user action:</strong> The system depends on users completing check-ins. Inability to access the app (lost phone, dead battery, etc.) will trigger alerts even if no emergency exists.</li>
-                            <li><strong>Any reply counts as a check-in:</strong> On calls and texts, any reply currently counts as checking in, and what you say is not passed on to your contacts. If you need help, call 911 or your contacts directly.</li>
+                            <li><strong>Alerts depend on what is said:</strong> On call and text check-ins, if what they say suggests they may need help, or they reply HELP during a text check-in, we text the contacts who agreed. We can't send help, and the AI can miss things. If you need help, call 911 (or your local emergency number) or your contacts directly.</li>
                             <li><strong>Contact responsibility:</strong> Emergency contacts may not see messages immediately or may not be able to respond. Do not rely solely on this system for safety.</li>
                             <li><strong>Not medical monitoring:</strong> This is not a medical alert system and is not monitored by healthcare professionals.</li>
                         </ul>
